@@ -1,2 +1,7 @@
 [webservers]
-52.152.147.121 ansible_user=ec2-user 
+52.152.147.121 
+
+[webservers:vars]
+ansible_connection=winrm
+ansible_user=root
+ansible_ssh_pass=Sony@1211
