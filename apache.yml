@@ -1,11 +1,11 @@
 ---
 - hosts: webservers 
   become: True
+  sudo: yes
   tasks:
-    - name: Install packages
-      yum:
-        name: "httpd"
-        state: "present"
+    - name: install apache2
+      apt: name=apache2 update_cache=yes state=latest
+
     - name: Start Apache server
       service:
         name: httpd
